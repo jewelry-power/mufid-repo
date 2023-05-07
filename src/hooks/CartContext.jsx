@@ -7,6 +7,7 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   // item amount state
   const [itemAmount, setItemAmount] = useState(0);
+
   // total price state
   const [total, setTotal] = useState(0);
 
@@ -84,6 +85,7 @@ const CartProvider = ({ children }) => {
   };
 
   return (
+
     <CartContext.Provider
       value={{
         cart,
@@ -98,6 +100,7 @@ const CartProvider = ({ children }) => {
     >
       {children}
     </CartContext.Provider>
+    
   );
 };
 

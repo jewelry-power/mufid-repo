@@ -51,12 +51,22 @@ const SideBarMenu = () => {
           </div>
         </div>
 
-        <Link
-          to={"/"}
-          className="bg-black flex p-3 justify-center items-center text-white w-full font-medium"
-        >
-          Checkout
-        </Link>
+        <div>
+          
+          {total > 0 ? (
+            <Link
+
+             
+              to={"/checkout"}
+
+              className="bg-black flex p-3 justify-center items-center text-white w-full font-medium"
+            >
+              Checkout
+            </Link>
+          ) : (
+            <p>No items in the cart.</p>
+          )}
+        </div>
       </div>
     </div>
   );

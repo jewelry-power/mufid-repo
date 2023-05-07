@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { TempData } from "../data/TempData";
 
 // share the Product with other components
 export const ProductContext = createContext();
@@ -11,23 +12,23 @@ const ProductProvider = ({ children }) => {
   // fetch products (api or local)
   useEffect(() => {
     
-    /*
+    
 
-      import productsData from "./productsData.json";
-      setProducts(productsData);
+     
+      setProducts(TempData);
 
-    */
+    
 
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((response) => {
-        const data = response.data;
-        setProducts(data);
-      })
+    // axios
+    //   .get("https://fakestoreapi.com/products")
+    //   .then((response) => {
+    //     const data = response.data;
+    //     setProducts(data);
+    //   })
 
-      .catch((error) => {
-        console.error(error);
-      });
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
 
     // triggered only once "indicated by the empty dependency array"
   }, []);

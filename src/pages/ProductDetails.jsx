@@ -36,8 +36,9 @@ const ProductDetails = () => {
         <div className="flex flex-col lg:flex-row items-center">
           {/* image */}
           <div className="flex flex-1 justify-center items-center mb-8 lg:mb-0">
-            <img className="max-w-[200px] lg:max-w-xs" src={image} alt="" />
+            <img className="max-w-full h-auto" src={image} alt={title} />
           </div>
+
           {/* text */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
@@ -48,22 +49,21 @@ const ProductDetails = () => {
             </div>
 
             <p className="mb-8">{description}</p>
-                <div className="flex">
-
-            <button
-              onClick={() => addToCart(product, product.id)}
-              className="bg-black py-4 px-8 text-white"
-            >
-              Add to cart
-            </button>
-            <button
-              onClick={() => navigate('/product')}
-              className="bg-black mx-5 py-4 px-8 text-white flex items-center"
-            >
-              <AiOutlineArrowLeft />
-              <span className="ml-2">Back</span>
-            </button>
-          </div>
+            <div className="flex">
+              <button
+                onClick={() => addToCart(product, product.id)}
+                className="bg-black py-4 px-8 text-white"
+              >
+                Add to cart
+              </button>
+              <button
+                onClick={() => navigate("/product")}
+                className="bg-black mx-5 py-4 px-8 text-white flex items-center"
+              >
+                <AiOutlineArrowLeft />
+                <span className="ml-2">Back</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
