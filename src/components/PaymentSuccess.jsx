@@ -1,7 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../hooks/CartContext";
 
 export default function PaymentSuccess() {
+  const { clearCart } = useContext(CartContext);
+  const handleGoBack = () => {
+    clearCart();
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="bg-white p-6 md:p-12 rounded-lg shadow-lg">
@@ -25,7 +31,8 @@ export default function PaymentSuccess() {
           <div className="py-10 text-center">
             <Link
               to="/"
-              className="px-12 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-lg"
+              onClick={handleGoBack}
+              className="px-12bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 border border-gray-400  shadow  py-3 rounded-lg"
             >
               GO BACK
             </Link>

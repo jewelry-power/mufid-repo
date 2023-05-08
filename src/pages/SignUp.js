@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-// import background from "../images/login.png"
+import background from "../images/login.png";
+// export const UserSign=createContext();
 function SignUp() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [info, setInfo] = useState([]);
-  // const [storeData,setdata]=useState([])
+  const [userSignUp, setUserSignUp] = useState(false);
   const [googleUser, setGoogleUser] = useState({});
   const [pemail, setpEmail] = useState("pvalidate");
   const [pname, setpName] = useState("pvalidate");
@@ -27,13 +29,6 @@ function SignUp() {
     return pattern.test(string);
   }
 
-  let arrData = [];
-
-  if (localStorage.arrData != null) {
-    arrData = JSON.parse(localStorage.infoUser);
-  }
-  console.log(arrData);
-
   function handelCallBack(response) {
     // {theme:"outline",size:"large"}
     // console.log("test",response.credential)
@@ -43,33 +38,42 @@ function SignUp() {
     document.getElementById("signInDiv").hidden = true;
     navigate("/");
   }
-  // useEffect(() => {
-  //   google.accounts.id.initialize({
-  //     client_id: "593425946716-q23ll3fdbj33ps4douabe5ud8217kh87.apps.googleusercontent.com",
-  //     callback: handelCallBack
-
-  //   })
-  //   google.accounts.id.renderButton(
-  //     document.getElementById("signInDiv"),
-  //     { theme: "outline", size: "large" }
-
-  //   )
-  // }, [])
-
-  const [saveToLocal, setLocal] = useState([]);
   useEffect(() => {
-    localStorage.setItem("infoUser", JSON.stringify(info));
+    google.accounts.id.initialize({
+      client_id:
+        "593425946716-q23ll3fdbj33ps4douabe5ud8217kh87.apps.googleusercontent.com",
+      callback: handelCallBack,
+    });
+    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+      theme: "outline",
+      size: "large",
+    });
+  }, []);
 
-    if (info.length > 0) {
-      if (localStorage.infoUser.includes(email)) {
-        // localStorage.removeItem(info)
-        // info.pop()
-      }
-      localStorage.setItem("infoUser", JSON.stringify(info));
-    } else {
-      setInfo(JSON.parse(localStorage.getItem("infoUser")));
+  const [saveToLocal, setLocal] = useState([info]);
+  useEffect(() => {
+    // localStorage.setItem("dataUser", JSON.stringify(info))
+    if (localStorage.dataUser != null) {
+      setInfo(JSON.parse(localStorage.getItem("dataUser")));
+
+      //   if (info.length>0) {
+      //   {
+      //     localStorage.setItem("dataUser", JSON.stringify([]))
+
+      //     if((localStorage.dataUser.includes(email))) {
+      //       info.pop()
+      //       // localStorage.removeItem()
+
+      //  }
+      // //  if(localStorage.dataUser<0){
+      // //   localStorage.setItem("dataUser", JSON.stringify([]))
+      // //  }
+      //   }
+      //   // else{
+      //      setInfo(JSON.parse(localStorage.getItem("dataUser")))
     }
   }, []);
+
   function handelSubmit(e) {
     e.preventDefault();
     if (!emailValidate(email)) {
@@ -86,33 +90,31 @@ function SignUp() {
       UserValidate(name) &&
       PassWordValidate(password)
     ) {
-      const user = {
-        name,
-        email,
-        password,
-      };
-      localStorage.setItem("infoUser", JSON.stringify(user));
-      // console.log('first', user)
-      // console.log(info)
+      setUserSignUp(true);
+      const user = { name, email, password };
+      // const data=[...info,user]
+      const data = [info, user];
+      setInfo(data);
+      localStorage.setItem("dataUser", JSON.stringify(info));
+      // alert("welcome");
+      // console.log(userSignUp)
       navigate("/");
     }
-
-    // if (localStorage.infoUser.includes(email)) {
-
-    //   alert("user already exists Sign in or try with different password")
-    // }
   }
+  if (localStorage.dataUser) {
+    if (
+      localStorage.dataUser.includes(email) &&
+      !localStorage.dataUser.includes(" ")
+    ) {
+      // alert("user already exists Sign in");
+    }
+  }
+  // }
+
   function handelSignOut(e) {
     setGoogleUser({});
     document.getElementById("signInDiv").hidden = false;
   }
-
-  // useEffect(() => {
-  //   const abd = localStorage.getItem('infoUser')
-  //   const test = setinfo();
-  //   console.log(test)
-  // })
-
   // console.log(info)
   return (
     <div>
@@ -183,11 +185,12 @@ function SignUp() {
 
               <button
                 type="submit"
-                className="w-full  bg-amber-300  hover:bg-amber-300 focus:bg-amber-300 text-black font-semibold rounded-lg
-                px-4 py-3 mt-6"
-                onClick={handelSubmit}
+                className="w-full block bg-amber-400  hover:bg-amber-300 focus:bg-amber-200 text-white font-semibold rounded-lg
+                px-4 py-3 mt-6 signupBtn"
+                onClick={(e) => {
+                  handelSubmit(e);
+                }}
               >
-                {" "}
                 sign up{" "}
               </button>
 
@@ -204,13 +207,13 @@ function SignUp() {
             <p className="mt-8">
               do you have account?{" "}
               <a className="text-blue-500 hover:text-blue-700 font-semibold">
-                log in here
+                <Link to="/signin">log in here</Link>
               </a>
             </p>
           </div>
         </div>
         <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
-          {/* <img src={background} alt="" className="w-full h-full object-cover" /> */}
+          <img src={background} alt="" className="w-full h-full object-cover" />
         </div>
       </section>
     </div>

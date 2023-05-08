@@ -13,7 +13,6 @@ export default function CheckOut() {
     creditExpiry: "",
     creditCVC: "",
     billingAddress: "",
-   
     billingZip: "",
   });
   const [formErrors, setFormErrors] = useState({});
@@ -212,7 +211,7 @@ console.log(formData);
                 Total
               </label>
               <div className="relative">
-                <h1 className="text-2xl font-bold">{total}</h1>
+                <h1 className="text-2xl font-bold">$ {total}</h1>
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3"></div>
               </div>
               <button

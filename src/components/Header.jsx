@@ -2,18 +2,19 @@ import React, { useContext, useState } from "react";
 import { SidebarContext } from "../hooks/SidebarContext";
 import { CartContext } from "../hooks/CartContext";
 import { BsBag } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   // header state
+  const navigate = useNavigate();
 
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
-   const [navbar, setNavbar] = useState(false);
+  const [navbar, setNavbar] = useState(false);
 
   return (
-    <div>
-      <nav id="header" className="w-full z-30 top-0 py-1  ">
+    <div className="">
+      <nav id="header" className="w-full z-30 top-0 py-1 bg-gray-100 ">
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
           <input className="hidden" type="checkbox" id="menu-toggle" />
 
@@ -21,7 +22,7 @@ const Header = () => {
 
           <div className="order-1 md:order-2 mr-20 max-md:mr-8 max-sm:mr-5">
             <Link
-              className="flex items-text-white tracking-wide no-underline hover:no-underline font-bold  text-xl max-sm:text-base "
+              className="flex items-text-white tracking-wide no-underline hover:no-underline font-bold  text-xl max-sm:text-base pl-[190px]  "
               to="/"
             >
               GOLDEN WHISSPER
@@ -34,9 +35,16 @@ const Header = () => {
           >
             <Link
               className="inline-block no-underline font-medium  text-2xl max-sm:text-base mr-5 "
-              to="signin"
+              onClick={(e) => {
+                window.localStorage.clear();
+                e.preventDefault();
+                navigate("/signup");
+              }}
+              // to="signup"
             >
-              Login
+              {JSON.parse(localStorage.getItem("dataUser"))
+                ? "Logout"
+                : "Sign In"}
             </Link>
             <div
               onClick={() => setIsOpen(!isOpen)}
@@ -50,7 +58,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <nav id="header" className="w-full z-30 top-0 py-1  bg-white shadow ">
+      <nav id="header" className="w-full z-30 top-0 py-1  shadow bg-gray-100">
         <div className="md:hidden">
           <button
             className="p-2 rounded-md outline-none   focus:border-gray-400 focus:border"

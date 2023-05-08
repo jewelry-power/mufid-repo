@@ -19,6 +19,7 @@ const CartProvider = ({ children }) => {
   });
 
   // update item amount
+  
   useEffect(() => {
     if (cart) {
       const amount = cart.reduce((accumulator, currentItem) => {
@@ -28,9 +29,11 @@ const CartProvider = ({ children }) => {
     }
   }, [cart]);
 
+
   // add to cart
   const addToCart = (product, id) => {
     const newItem = { ...product, amount: 1 };
+
     // check if the item is already in the cart
     const cartItem = cart.find((item) => {
       return item.id === id;
@@ -55,7 +58,7 @@ const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
-  // cleart cart
+  // clear cart
   const clearCart = () => {
     setCart([]);
   };

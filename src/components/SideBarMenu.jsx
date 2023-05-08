@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { IoMdArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
@@ -9,10 +9,21 @@ import CartItem from "../components/CartItem";
 import { SidebarContext } from "../hooks/SidebarContext";
 import { CartContext } from "../hooks/CartContext";
 
+
 const SideBarMenu = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
+  const navigate = useNavigate();
   const { cart, clearCart, itemAmount, total } = useContext(CartContext);
+ 
+  function handelClick(e) {
+    e.preventDefault();
 
+    if (localStorage === null) {
+      navigate("/signin");
+    } else{
+      navigate("/checkout")
+    }
+  }
   return (
     <div
       className={`${
@@ -52,13 +63,9 @@ const SideBarMenu = () => {
         </div>
 
         <div>
-          
           {total > 0 ? (
             <Link
-
-             
-              to={"/checkout"}
-
+              onClick={(e) => handelClick(e)}
               className="bg-black flex p-3 justify-center items-center text-white w-full font-medium"
             >
               Checkout

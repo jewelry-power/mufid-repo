@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import axios from "axios";
 import { TempData } from "../data/TempData";
 
 // share the Product with other components
@@ -11,24 +10,7 @@ const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   // fetch products (api or local)
   useEffect(() => {
-    
-    
-
-     
-      setProducts(TempData);
-
-    
-
-    // axios
-    //   .get("https://fakestoreapi.com/products")
-    //   .then((response) => {
-    //     const data = response.data;
-    //     setProducts(data);
-    //   })
-
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
+    setProducts(TempData);
 
     // triggered only once "indicated by the empty dependency array"
   }, []);

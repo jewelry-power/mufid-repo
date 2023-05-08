@@ -9,21 +9,19 @@ export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   console.log(products);
-  const itemsPerPage = 8;
+  const itemsPerPage = 10;
 
   // Filter products based on the selected category
   const filteredProducts = products.filter((item) => {
-    if (!selectedCategory) {
-      // If no category is selected, show all products
-      return item.title.toLowerCase().includes(searchQuery.toLowerCase());
-    } else {
-      // Show products of the selected category
-      return (
-        item.category.toLowerCase() === selectedCategory.toLowerCase() &&
-        item.title.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
+    const isTitleMatch = item.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    const isCategoryMatch =
+      !selectedCategory ||
+      item.category.toLowerCase() === selectedCategory.toLowerCase();
+    return isTitleMatch && isCategoryMatch;
   });
+
 
   // Calculate total number of pages
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
