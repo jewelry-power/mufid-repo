@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import img from '../images/login.png'
 
 function SignIn(e) {
   // console.log(localStorage.infoUser)
@@ -37,14 +38,8 @@ function SignIn(e) {
   // }
   return (
     <div>
-      <section className="flex flex-col md:flex-row h-screen items-center">
-        <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
-          <img
-            src="/src/assets/login.png"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <section className="flex flex-col md:flex-row h-screen items-center mt-5">
+     
 
         <div
           className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
@@ -86,7 +81,7 @@ function SignIn(e) {
 
               <button
                 type="submit"
-                className="w-full block bg-amber-300   hover:bg-amber-300 focus:bg-amber-200 text-white font-semibold rounded-lg
+                className="w-full block bg-neutral-900   hover:bg-neutral-900 focus:bg-neutral-900 text-white font-semibold rounded-lg
                 px-4 py-3 mt-6"
                 onClick={(e) => handelSignIn(e)}
               >
@@ -101,6 +96,13 @@ function SignIn(e) {
               </a>
             </p>
           </div>
+        </div>
+        <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
+          <img
+            src={img}
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
       </section>
     </div>

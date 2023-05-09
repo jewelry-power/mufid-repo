@@ -1,41 +1,14 @@
 // import React, { Component } from 'react'
 
 import React from 'react'
+import { Link } from "react-router-dom";
 
 function Pro() {
   return (
     <div>
       <section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+     
+        <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 mt-[40rem]">
           <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
             <div className="relative z-10 lg:py-16">
               <div className="relative h-64 sm:h-80 lg:h-full">
@@ -49,7 +22,7 @@ function Pro() {
             <div className="relative flex items-center bg-gray-100">
               <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100" />
               <div className="p-8 sm:p-16 lg:p-24">
-                <h2 className="text-2xl font-bold sm:text-3xl text-amber-400 ">
+                <h2 className="text-2xl font-bold sm:text-3xl text-neutral-900 ">
                   Our Collection product's
                 </h2>
                 <p className="mt-4 text-black-600 ">
@@ -59,28 +32,26 @@ function Pro() {
                   earrings, rings, brooches, and watches, which are crafted
                   using various precious metals, gemstones, and other materials.
                 </p>
-                <a
-                  href="#"
-                  className="mt-8  inline-block rounded border border-amber-400 bg-amber-400 px-12 py-3 bg-amber-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-amber-300 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                <Link
+                  to="product"
+                  className="mt-8  inline-block rounded border border-neutral-900 bg-neutral-900 px-12 py-3 bg-neutral-900 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-neutral-900 hover:shadow-lg focus:bg-neutral-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-lg transition duration-150 ease-in-out"
                 >
                   View more
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div className="con1">
+      
+
+
+        <div className="con1 mt-[10rem]">
           <div class="  lg:grid-cols-3 justify-center">
             <div></div>
             <div class="group border-gray-100/30 flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border  bg-gray-100 shadow-md">
-              <a
+              <Link
                 class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
-                href="#"
+                to="product"
               >
                 <img
                   class="peer absolute top-0 right-0 h-full w-full object-cover"
@@ -107,7 +78,7 @@ function Pro() {
                     d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z"
                   />
                 </svg>
-              </a>
+              </Link>
               <div class="mt-4 px-5 pb-5">
                 <a href="#">
                   <h5 class="text-xl tracking-tight text-black ">
@@ -119,17 +90,16 @@ function Pro() {
                     <span class="text-3xl font-bold text-black">$449</span>
                   </p>
                 </div>
-                {/* <a href="#" class="hover:border-black/80 flex items-center justify-center rounded-md border border-transparent bg-amber-400 px-5 py-2.5  bg-amber-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-amber-300 hover:shadow-lg focus:bg-amber-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-300 active:shadow-lg transition duration-150 ease-in-out">
-                                    View more</a > */}
+               
               </div>
             </div>
           </div>
           <div class="  lg:grid-cols-3 justify-center">
             <div></div>
             <div class="group border-gray-100/30 flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border  bg-gray-100 shadow-md">
-              <a
+              <Link
                 class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
-                href="#"
+                to="product"
               >
                 <img
                   class="peer absolute top-0 right-0 h-full w-full object-cover"
@@ -156,7 +126,7 @@ function Pro() {
                     d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z"
                   />
                 </svg>
-              </a>
+              </Link>
               <div class="mt-4 px-5 pb-5">
                 <a href="#">
                   <h5 class="text-xl tracking-tight text-black">
@@ -168,17 +138,16 @@ function Pro() {
                     <span class="text-3xl font-bold text-black">$449</span>
                   </p>
                 </div>
-                {/* <a href="#" class="hover:border-black/80 flex items-center justify-center rounded-md border border-transparent bg-amber-400 px-5 py-2.5  bg-amber-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-amber-300 hover:shadow-lg focus:bg-amber-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-300 active:shadow-lg transition duration-150 ease-in-out">
-                                    View more</a > */}
+            
               </div>
             </div>
           </div>
           <div class="  lg:grid-cols-3 justify-center">
             <div></div>
             <div class="group border-gray-100/30 flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border  bg-gray-100 shadow-md">
-              <a
+              <Link
                 class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
-                href="#"
+                to="product"
               >
                 <img
                   class="peer absolute top-0 right-0 h-full w-full object-cover"
@@ -205,7 +174,7 @@ function Pro() {
                     d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z"
                   />
                 </svg>
-              </a>
+              </Link>
               <div class="mt-4 px-5 pb-5">
                 <a href="#">
                   <h5 class="text-xl tracking-tight text-black">

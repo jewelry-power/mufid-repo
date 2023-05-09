@@ -38,17 +38,17 @@ function SignUp() {
     document.getElementById("signInDiv").hidden = true;
     navigate("/");
   }
-  useEffect(() => {
-    google.accounts.id.initialize({
-      client_id:
-        "593425946716-q23ll3fdbj33ps4douabe5ud8217kh87.apps.googleusercontent.com",
-      callback: handelCallBack,
-    });
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      theme: "outline",
-      size: "large",
-    });
-  }, []);
+  // useEffect(() => {
+  //   google.accounts.id.initialize({
+  //     client_id:
+  //       "593425946716-q23ll3fdbj33ps4douabe5ud8217kh87.apps.googleusercontent.com",
+  //     callback: handelCallBack,
+  //   });
+  //   google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+  //     theme: "outline",
+  //     size: "large",
+  //   });
+  // }, []);
 
   const [saveToLocal, setLocal] = useState([info]);
   useEffect(() => {
@@ -119,7 +119,7 @@ function SignUp() {
   return (
     <div>
       {" "}
-      <section className="flex flex-col md:flex-row h-screen items-center">
+      <section className="flex flex-col md:flex-row h-screen items-center mt-[1rem]">
         <div
           className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
           flex items-center justify-center"
@@ -177,15 +177,15 @@ function SignUp() {
                   characters,small and big letters{" "}
                 </p>
               </div>
-              <div className="text-right mt-2">
+              {/* <div className="text-right mt-2">
                 <a className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700">
                   Forgot Password?
                 </a>
-              </div>
+              </div> */}
 
               <button
                 type="submit"
-                className="w-full block bg-amber-400  hover:bg-amber-300 focus:bg-amber-200 text-white font-semibold rounded-lg
+                className="w-full block bg-neutral-900  hover:bg-neutral-900 focus:bg-neutral-900 text-white font-semibold rounded-lg
                 px-4 py-3 mt-6 signupBtn"
                 onClick={(e) => {
                   handelSubmit(e);

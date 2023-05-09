@@ -107,7 +107,7 @@ const Header = () => {
               <ul className="md:flex  items-center justify-between text-1xl pt-6 md:pt-0">
                 <li>
                   <Link
-                    className="inline-block no-underline font-medium md:text-sm   hover:text-gray-200   py- px-20"
+                    className="inline-block no-underline font-medium md:text-sm   hover:text-amber-400   py- px-20"
                     to="/"
                   >
                     Home
@@ -115,7 +115,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    className="inline-block no-underline font-medium md:text-sm  hover:text-gray-200 py-2 px-20"
+                    className="inline-block no-underline font-medium md:text-sm  hover:text-amber-400  py-2 px-20"
                     to="contact"
                   >
                     Contact{" "}
@@ -123,7 +123,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    className="inline-block no-underline font-medium md:text-sm  hover:text-gray-200 py-2 px-20"
+                    className="inline-block no-underline font-medium md:text-sm  hover:text-amber-400  py-2 px-20"
                     to="about"
                   >
                     About{" "}
@@ -131,7 +131,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    className="inline-block no-underline font-medium  md:text-sm hover:text-gray-200 py-2 px-20"
+                    className="inline-block no-underline font-medium  md:text-sm hover:text-amber-400  py-2 px-20"
                     to="product"
                   >
                     Products

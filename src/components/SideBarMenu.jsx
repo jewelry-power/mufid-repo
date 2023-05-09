@@ -18,8 +18,8 @@ const SideBarMenu = () => {
   function handelClick(e) {
     e.preventDefault();
 
-    if (localStorage === null) {
-      navigate("/signin");
+    if (localStorage.length === 0) {
+      navigate("/signup");
     } else{
       navigate("/checkout")
     }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+// import  '../images/co.png'
 
 export default function Contact() {
      const form = useRef();
@@ -124,7 +125,7 @@ export default function Contact() {
           w-full
           px-6
           py-2.5
-          bg-amber-300
+          bg-zinc-600
           text-white
           font-medium
           text-xs
@@ -132,9 +133,9 @@ export default function Contact() {
           uppercase
           rounded
           shadow-md
-          hover: bg-amber-400 hover:shadow-lg
-          focus: bg-amber-400 focus:shadow-lg focus:outline-none focus:ring-0
-          active: bg-amber-400 active:shadow-lg
+           hover:shadow-xl
+           focus:shadow-lg focus:outline-none focus:ring-0
+           active:shadow-lg
           transition
           duration-150
           ease-in-out"
