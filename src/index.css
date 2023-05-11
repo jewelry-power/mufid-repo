@@ -15,11 +15,7 @@ body{
 .App {
   margin: auto;
 }
-.aa{
-  height: 40rem;
-  border-radius: 0;
-  margin-bottom:4rem
-}
+
 .pvalidate{
   display: none
 }

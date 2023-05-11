@@ -9,8 +9,8 @@ import fifth from "../images/5.png";
 export class Section extends Component {
   render() {
     return (
-      <div className="max-h-100 sm:h-64 xl:h-80 2xl:h-96 aa rounded-none 	">
-        <div className="carousel w-full">
+      <div className=" sm:h-64 xl:h-80 2xl:h-96 aa rounded-none 	">
+        <div className="carousel w-full ">
           <div id="slide1" className="carousel-item relative w-full">
             <img src={first} className="w-full" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

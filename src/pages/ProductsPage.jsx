@@ -69,7 +69,7 @@ export default function ProductsPage() {
           <div className="flex justify-center mb-8">
             <input
               type="text"
-              placeholder="Search by title"
+              placeholder="Search "
               className="mr-4 px-4 py-2 rounded bg-gray-200 text-gray-700"
               value={searchQuery}
               onChange={handleSearch}

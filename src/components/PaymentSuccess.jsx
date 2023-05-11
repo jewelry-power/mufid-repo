@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../hooks/CartContext";
+import {GiConfirmed} from 'react-icons/gi'
 
 export default function PaymentSuccess() {
   const { clearCart } = useContext(CartContext);
@@ -13,7 +14,7 @@ export default function PaymentSuccess() {
       <div className="bg-white p-6 md:p-12 rounded-lg shadow-lg">
         <svg
           viewBox="0 0 24 24"
-          className="text-green-600 w-16 h-16 mx-auto my-6"
+          className="text-black-100 w-16 h-16 mx-auto my-6"
         >
           <path
             fill="currentColor"

@@ -7,8 +7,8 @@ function Pro() {
   return (
     <div>
       <section>
-     
-        <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 mt-[40rem]">
+
+        <div className=" mt-[32rem]">
           <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
             <div className="relative z-10 lg:py-16">
               <div className="relative h-64 sm:h-80 lg:h-full">
@@ -42,12 +42,11 @@ function Pro() {
             </div>
           </div>
         </div>
-      
+
 
 
         <div className="con1 mt-[10rem]">
           <div class="  lg:grid-cols-3 justify-center">
-            <div></div>
             <div class="group border-gray-100/30 flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border  bg-gray-100 shadow-md">
               <Link
                 class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
@@ -90,12 +89,11 @@ function Pro() {
                     <span class="text-3xl font-bold text-black">$449</span>
                   </p>
                 </div>
-               
+
               </div>
             </div>
           </div>
           <div class="  lg:grid-cols-3 justify-center">
-            <div></div>
             <div class="group border-gray-100/30 flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border  bg-gray-100 shadow-md">
               <Link
                 class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
@@ -138,12 +136,11 @@ function Pro() {
                     <span class="text-3xl font-bold text-black">$449</span>
                   </p>
                 </div>
-            
+
               </div>
             </div>
           </div>
           <div class="  lg:grid-cols-3 justify-center">
-            <div></div>
             <div class="group border-gray-100/30 flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border  bg-gray-100 shadow-md">
               <Link
                 class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"

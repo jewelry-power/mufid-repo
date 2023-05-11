@@ -29,7 +29,7 @@ const CartProvider = ({ children }) => {
     }
   }, [cart]);
 
-
+  
   // add to cart
   const addToCart = (product, id) => {
     const newItem = { ...product, amount: 1 };

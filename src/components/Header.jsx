@@ -22,7 +22,7 @@ const Header = () => {
 
           <div className="order-1 md:order-2 mr-20 max-md:mr-8 max-sm:mr-5">
             <Link
-              className="flex items-text-white tracking-wide no-underline hover:no-underline font-bold  text-xl max-sm:text-base pl-[190px]  "
+              className="flex items-text-white tracking-wide no-underline hover:no-underline font-bold  text-xl max-sm:text-base pl-[13rem]  "
               to="/"
             >
               GOLDEN WHISSPER
@@ -40,7 +40,7 @@ const Header = () => {
                 e.preventDefault();
                 navigate("/signup");
               }}
-              // to="signup"
+            // to="signup"
             >
               {JSON.parse(localStorage.getItem("dataUser"))
                 ? "Logout"
@@ -100,9 +100,8 @@ const Header = () => {
 
           <div>
             <div
-              className={`flex-1 justify-self-center border-t-2  border-black   pb-3 mt-8 md:block md:pb-0 md:mt-2 ${
-                navbar ? "block" : "hidden"
-              }`}
+              className={`flex-1 justify-self-center border-t-2  border-black   pb-3 mt-8 md:block md:pb-0 md:mt-2 ${navbar ? "block" : "hidden"
+                }`}
             >
               <ul className="md:flex  items-center justify-between text-1xl pt-6 md:pt-0">
                 <li>
@@ -115,10 +114,18 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
+                    className="inline-block no-underline font-medium  md:text-sm hover:text-amber-400  py-2 px-20"
+                    to="product"
+                  >
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     className="inline-block no-underline font-medium md:text-sm  hover:text-amber-400  py-2 px-20"
                     to="contact"
                   >
-                    Contact{" "}
+                    Who we are{" "}
                   </Link>
                 </li>
                 <li>
@@ -126,15 +133,7 @@ const Header = () => {
                     className="inline-block no-underline font-medium md:text-sm  hover:text-amber-400  py-2 px-20"
                     to="about"
                   >
-                    About{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="inline-block no-underline font-medium  md:text-sm hover:text-amber-400  py-2 px-20"
-                    to="product"
-                  >
-                    Products
+                    get in touch{" "}
                   </Link>
                 </li>
               </ul>
